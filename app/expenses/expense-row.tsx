@@ -24,7 +24,11 @@ export default function ExpenseRow({
   if (editing){
     return(
       <li>
-        <form action={updateThisOne}>
+        <form 
+          action={async (formData)=>{
+            await updateThisOne(formData)
+            setEditing(false)
+          }}>
               <input name="name" defaultValue={expense.name} />
               <input name="amount" type="number" step="0.01" defaultValue={expense.amount} />
               <button type="submit">Save Action</button>
