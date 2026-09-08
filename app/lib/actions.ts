@@ -15,7 +15,7 @@ export async function addExpense(formData: FormData) {
 
   // const category = await categorize(name)
   // expenses.push({ id:Date.now(), name, amount })
-  await prisma.expense.create({ data: { ...parsed, name: parsed.name, amount: parsed.amount } });
+  await prisma.expense.create({ data: { ...parsed, name: parsed.name, amount: parsed.amount, date: parsed.date ? new Date(parsed.date) : new Date() } });
 
   revalidatePath("/expenses"); // tell Next.js this page's data changed
 }

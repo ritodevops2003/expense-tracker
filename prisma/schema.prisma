@@ -13,4 +13,5 @@ model Expense {
   name     String
   amount   Float
   category String @default("Other")
+  date     DateTime @default(now())
 }
