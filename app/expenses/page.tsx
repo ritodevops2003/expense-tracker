@@ -23,7 +23,7 @@ export default async function ExpensesPage() {
           className="flex-1 rounded-md border border-zinc-300 px-3 py-2"
           type="text"
           name="text"
-          placeholder="e.g. spent 12 on lunch"
+          placeholder="e.g. spent 120 on lunch"
           required
         />
         <button

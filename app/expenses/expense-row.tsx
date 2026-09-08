@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import { deleteExpense, updateExpense } from "../lib/actions";
+import { formatRupees } from "../lib/currency";
 
 export default function ExpenseRow({
   expense,
@@ -69,7 +70,7 @@ export default function ExpenseRow({
   </span>
 
   <span className="ml-auto tabular-nums font-medium">
-    ${expense.amount.toFixed(2)}
+    {formatRupees(expense.amount)}
   </span>
 
   <button onClick={() => setPaid(!paid)}

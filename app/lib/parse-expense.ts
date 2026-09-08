@@ -33,6 +33,7 @@ export async function parseExpense(text: string) {
           `Today date is ${today}. ` +
           'Extract a single expense from the text. "name" is a short description of what was bought. ' +
           '"amount" is the numeric value only, without a currency symbol. ' +
+          'Amounts are in Indian rupees — treat "rs", "rupees", "₹" and a bare number the same. ' +
           "If the text contains no amount, set amount to null rather than guessing. " +
           "If the text does not describe what was bought, set name to null. " +
           '"date" is an ISO date (YYYY-MM-DD) resolved relative to today — "yesterday", ' +
