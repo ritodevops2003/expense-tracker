@@ -1,0 +1,16 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Expense {
+  id       Int    @id @default(autoincrement())
+  name     String
+  amount   Float
+  category String @default("Other")
+}
